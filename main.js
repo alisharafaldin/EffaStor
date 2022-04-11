@@ -1,3 +1,9 @@
+
+console.log("waaaaay");
+
+const body = document.getElementById("body")
+const head = document.getElementById("head")
+const scrolTob = document.getElementById("scrol-tob")
 const showItems = document.createElement("div");
 const allBuyBtn = document.querySelectorAll(".btn-primary");
 const backScreen = document.getElementById("backScreen");
@@ -10,6 +16,112 @@ const phone = document.getElementById("phone");
 const regbtn = document.getElementById("regbtn");
 const phoneMessage = document.getElementById("phonemessage")
 const userMessage = document.getElementById("usermessage")
+const contents = document.querySelector(".contents")
+const toPage1 = document.getElementById("to-page-1")
+const toPage2 = document.getElementById("to-page-2")
+const toPage3 = document.getElementById("to-page-3")
+const toPage4 = document.getElementById("to-page-4")
+const toPage5 = document.getElementById("to-page-5")
+const page1 = document.getElementById("page-1")
+const page2 = document.getElementById("page-2")
+const page3 = document.getElementById("page-3")
+const page4 = document.getElementById("page-4")
+const page5 = document.getElementById("page-5")
+
+const allTabs = document.querySelector(".alltabs")
+const allBtnTab = document.querySelectorAll(".btn-tab")
+const parentOfPage = document.querySelector(".parent-of-page")
+
+// عند رفع الصفحة
+window.onscroll = function () {
+  // console.log(this.scrollY)
+  if(this.scrollY >= 100){
+    scrolTob.classList.add("scrol-tob")
+  } else {
+    scrolTob.classList.remove("scrol-tob")
+  }
+}
+// التنقل بين الأقسام
+allBtnTab.forEach((item, index) => {
+  item.addEventListener("click", (eo) =>{
+    item.classList.add("active-btn")
+    console.log(item);
+    allTabs.getElementsByClassName("active-btn")[0].classList.remove("active-btn")
+    console.log(allTabs);
+    parentOfPage.getElementsByClassName("active-card")[0].classList.remove("active-card")
+    console.log(parentOfPage);
+    parentOfPage.getElementsByClassName("content")[index].classList.add("active-card")
+    console.log(parentOfPage);
+    allTabs.classList.add("onclike-tabs")
+  })
+})
+
+// كتابة عنوان الموقع آلياً عن طريق دالة
+
+
+// allBtn.addEventListener("click", (eo) => {
+//   contents.scrollY = 100;
+// })
+
+// كتابة عنوان الموقع آلياً عن طريق دالة
+const subTitle = document.getElementById("sub-title")
+let counter = 1
+const autowriting = () => {
+    const titleName ="متجر عفة استور لمستلزمات المرأة العصرية"
+    subTitle.innerText = titleName.slice(0,counter);
+    counter++
+    if (counter > titleName.length) {
+        // counter = 1 // في حالة تكارار الكتابة
+        clearInterval(stopAutoFun) // لإيقاف الدالة بعد إكمال الكتابة
+    } 
+}
+const stopAutoFun = setInterval(autowriting, 100)
+
+
+
+// التنقل بين الصفحات
+// toPage1.addEventListener("click", (eo) => {
+//   page1.style.display = "block";
+//   page1.style.opacity = 1;
+//   page1.style.scrollY = 100;
+//   backgroundColor = "var(--main-Color)"
+//   page2.style.display = "none";
+//   page3.style.display = "none";
+//   page4.style.display = "none";
+//   page5.style.display = "none";
+// })
+// toPage2.addEventListener("click", (eo) => {
+//   page1.style.display = "none";
+//   page2.style.display = "block";
+//   page2.style.opacity = 1;
+//   page3.style.display = "none";
+//   page4.style.display = "none";
+//   page5.style.display = "none";
+// })
+// toPage3.addEventListener("click", (eo) => {
+//   page1.style.display = "none";
+//   page2.style.display = "none";
+//   page3.style.display = "block";
+//   page3.style.opacity = 1;
+//   page4.style.display = "none";
+//   page5.style.display = "none";
+// })
+// toPage4.addEventListener("click", (eo) => {
+//   page1.style.display = "none";
+//   page2.style.display = "none";
+//   page3.style.display = "none";
+//   page4.style.display = "block";
+//   page4.style.opacity = 1;
+//   page5.style.display = "none";
+// })
+// toPage5.addEventListener("click", (eo) => {
+//   page1.style.display = "none";
+//   page2.style.display = "none";
+//   page3.style.display = "none";
+//   page4.style.display = "none";
+//   page5.style.display = "block";
+//   page5.style.opacity = 1;
+// })
 
 
 const updateTotalPrice = () => {
@@ -35,6 +147,7 @@ allBuyBtn.forEach((item) => {
       item.classList.remove("btn-primary");
       item.classList.add("btn-success");
       item.innerHTML = "&#10004; Done";
+      item.style.backgroundColor = "var(--main-Color)"
       // item.classList.add("icon-check-circle")
     }
 
@@ -59,10 +172,11 @@ allBuyBtn.forEach((item) => {
       body.append(showItems);
       showItems.classList.add("show-items");
       showItems.innerHTML = "عرض طلبات الشراء";
+      showItems.style.backgroundColor = "var(--main-Color)"
+
     }
 
-    {
-      //إضافة منتج في العربة
+    {//إضافة منتج في العربة
       const card = item.parentElement.parentElement.parentElement;
       const imgSrc = card
         .getElementsByClassName("card-img-top")[0]
@@ -143,6 +257,7 @@ function activReg() {
     console.log("aaaaaaa");
     regbtn.removeAttribute("disabled");
     regbtn.style.backgroundColor = "#04aa6d";
+    regbtn.style.display = "block"
     
   } else {
     regbtn.setAttribute("disabled", "disabled");
@@ -171,6 +286,7 @@ SubmitPurchaseRequisition.addEventListener("click", (eo) => {
   console.log("doneeee");
   const allSend = document.querySelectorAll(".item-container");
   let itemNum = 0;
+  let totalPriceItemSend = 0;
   allSend.forEach((item) => {
     console.log(item);
     const itemSend = item.getElementsByClassName("product-name")[0].innerText;
@@ -192,6 +308,9 @@ SubmitPurchaseRequisition.addEventListener("click", (eo) => {
              <input class="send all-item-send" type="text" name="item-${itemNum}" value="${allItemSend}">
         `;
         itemInfo.innerHTML += addAllItemSend;
+        
+        totalPriceItemSend += totalPriceAllItem;
+    console.log(totalPriceItemSend);
   });
 
   parentForm.style.display = "block";
@@ -200,14 +319,4 @@ SubmitPurchaseRequisition.addEventListener("click", (eo) => {
   }, 100);
 });
 
-const closeSend = document.getElementById("close-send");
-closeSend.addEventListener("click", (eo) => {
-  form.style.transform = "scale(0)";
-  setTimeout(() => {
-    parentForm.style.display = "none";
-  }, 600);
-  const allItem = document.querySelectorAll(".all-item-send");
-  allItem.forEach((item) => {
-    item.remove();
-  });
-});
+// const closeSend = document.getElementById("close-send"
