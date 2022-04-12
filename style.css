@@ -13,7 +13,20 @@
     --ligth-Color: #fff;
     --dark-Color: #111;
     --light-Dark-Color: #f3f2f2;
+    --danger-Color: #cc0000;
 }
+
+.btn-bay, .btn-register, .btn-danger{
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    margin: 50px auto 10px auto;
+    border-radius: 5px;
+    background-color: #04aa6d ;
+    color: white;
+    cursor: pointer;
+}
+
 body {
     width: 100%;
     /* border: #000 1px solid; */
@@ -341,18 +354,27 @@ body {
     font-weight: 500;
 }
 
+/* All-Product  */
+
+.all-product {
+    max-height: 80%;
+    overflow: auto;
+}
 .confirm-buy {
     display: flex;
-    gap: 10px;
+    /* gap: 10px; */
     justify-content: center;
     text-align: center;
     align-items: center;
+    flex-direction: column;
     color: #fff;
     font-weight: 500;
-    margin: 100px auto;
+    margin: 10px auto;
     width: 300px;
 }
-
+.btn-danger {
+    margin: 10px;
+}
 /* إرسال الطلبات */
 
 section {
@@ -469,17 +491,22 @@ input {
     padding-right: 10px;
 }
 
-.btn-bay {
-    width: 200px;
-    height: 40px;
-    font-size: 18px;
-    margin: 50px auto 10px auto;
+
+.btn-delete {
+    background-color: var(--danger-Color);
+    width: fit-content;
+    padding: 10px 15px;
+    color: var(--ligth-Color);
     border-radius: 5px;
-    background-color: #04aa6d ;
-    color: white;
-    cursor: pointer;
+}
+.all-item-send {
+    position: absolute;
+    top: -1000px
 }
 
+.register-btn {
+
+}
 .error {
     border: 2px solid red;
 }

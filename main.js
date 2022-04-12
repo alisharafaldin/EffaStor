@@ -319,4 +319,10 @@ SubmitPurchaseRequisition.addEventListener("click", (eo) => {
   }, 100);
 });
 
-// const closeSend = document.getElementById("close-send"
+const closeSend = document.getElementById("close-send")
+closeSend.addEventListener("click", (eo) => {
+  form.style.transform = "scale(0)";
+  setTimeout(() => {
+    parentForm.style.display = "none";
+  }, 500);
+})
