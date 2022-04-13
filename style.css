@@ -14,6 +14,7 @@
     --dark-Color: #111;
     --light-Dark-Color: #f3f2f2;
     --danger-Color: #cc0000;
+    --approval-Color: #04aa6d;
 }
 
 .btn-bay, .btn-register, .btn-danger{
@@ -22,7 +23,7 @@
     font-size: 18px;
     margin: 50px auto 10px auto;
     border-radius: 5px;
-    background-color: #04aa6d ;
+    background-color: var(--secondary-Color) ;
     color: white;
     cursor: pointer;
 }

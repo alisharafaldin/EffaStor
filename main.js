@@ -147,7 +147,7 @@ allBuyBtn.forEach((item) => {
       item.classList.remove("btn-primary");
       item.classList.add("btn-success");
       item.innerHTML = "&#10004; Done";
-      item.style.backgroundColor = "var(--main-Color)"
+      item.style.backgroundColor = "var(--approval-Color)"
       // item.classList.add("icon-check-circle")
     }
 
