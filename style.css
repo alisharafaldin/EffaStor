@@ -137,6 +137,7 @@ body {
       padding: 10px;
       background-color: var(--main-Color);
       transition: all .5s;
+      align-items: center;
   }
   .scrol-tob .logo {
       margin: auto 20px;
@@ -154,6 +155,9 @@ body {
   }
   .scrol-tob .nav-menu {
       margin: auto 20px;
+  }
+  .scrol-tob .shopping-bag {
+      color: var(--ligth-Color)
   }
 .container {
     /* border: 1px solid blue; */
