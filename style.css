@@ -33,6 +33,9 @@ body {
     /* border: #000 1px solid; */
     margin: 10px auto;
 }
+.head {
+    text-align: center;
+}
 .logo {
     display: flex;
     flex-direction: row;
@@ -125,6 +128,25 @@ body {
     font-weight: bold;
     opacity: 1;
   }
+.shopping-bag {
+    font-size: 40px;
+    color: var(--main-Color);
+}
+.shopping-bag::after{
+    content: '1';
+    font-size: 15px;
+    border: 1px solid;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 216px;
+    left: 216px;
+    color: var(--ligth-Color);
+    background-color: var(--approval-Color);
+}
+
+
 
   /* Scroll Tob */
   .scrol-tob {
@@ -157,7 +179,8 @@ body {
       margin: auto 20px;
   }
   .scrol-tob .shopping-bag {
-      color: var(--ligth-Color)
+      color: var(--ligth-Color);
+      font-size: 20px;
   }
 .container {
     /* border: 1px solid blue; */

@@ -2,6 +2,7 @@
 console.log("waaaaay");
 
 const body = document.getElementById("body")
+const shoppingBag = document.getElementById("shopping-bag")
 const head = document.getElementById("head")
 const scrolTob = document.getElementById("scrol-tob")
 const showItems = document.createElement("div");
@@ -76,7 +77,6 @@ const autowriting = () => {
     } 
 }
 const stopAutoFun = setInterval(autowriting, 100)
-
 
 
 // التنقل بين الصفحات
