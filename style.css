@@ -33,8 +33,9 @@ body {
     /* border: #000 1px solid; */
     margin: 10px auto;
 }
-.head {
+.scrol {
     text-align: center;
+    
 }
 .logo {
     display: flex;
@@ -128,20 +129,31 @@ body {
     font-weight: bold;
     opacity: 1;
   }
+
+.shopping {
+    position: absolute;
+    /* border: 1px solid; */
+    width: fit-content;
+    margin: 0 auto;
+    top: 150px;
+    right: 50px;
+    cursor: pointer;
+    display: none;
+    
+}
 .shopping-bag {
     font-size: 40px;
     color: var(--main-Color);
 }
-.shopping-bag::after{
-    content: '1';
+.shopping-count{
     font-size: 15px;
     border: 1px solid;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     position: absolute;
-    top: 216px;
-    left: 216px;
+    top: 0px;
+    left: 30px;
     color: var(--ligth-Color);
     background-color: var(--approval-Color);
 }
@@ -156,7 +168,7 @@ body {
       top: 0;
       right: 0;
       left: 0;
-      padding: 10px;
+      padding: 5px;
       background-color: var(--main-Color);
       transition: all .5s;
       align-items: center;
@@ -178,10 +190,33 @@ body {
   .scrol-tob .nav-menu {
       margin: auto 20px;
   }
-  .scrol-tob .shopping-bag {
-      color: var(--ligth-Color);
-      font-size: 20px;
+  .scrol-tob .shopping {
+    position: relative;
+      margin: 0;
+      margin-right: 3px;
+      font-size: 15px;
+      top: 0px;
+      right: 0px;
   }
+  .scrol-tob .shopping .shopping-bag {
+     color: var(--ligth-Color);
+     font-size: 30px;
+  }
+  .scrol-tob .shopping .shopping-count{
+    font-size: 10px;
+    border: 1px solid;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    color: var(--ligth-Color);
+    background-color: var(--approval-Color);
+}
+
+
+
 .container {
     /* border: 1px solid blue; */
     width: 100%;
@@ -301,18 +336,13 @@ body {
  }
 
  .show-items {
-    position: fixed;
-    top: 100px;
-    right: 0;
-    /* transform: translateX(50%); */
+   
+    transform: translateX(50%);
     transition: all 1s;
-    background-color: #024727;
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
+    /* background-color: #024727; */
     font-size: 20px;
-    font-weight: bold;
-    cursor: pointer; 
+    display: block;
+  
  }
  /* back-screen */
 

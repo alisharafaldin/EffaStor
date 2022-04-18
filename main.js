@@ -2,7 +2,9 @@
 console.log("waaaaay");
 
 const body = document.getElementById("body")
+const shopping = document.getElementById("shopping")
 const shoppingBag = document.getElementById("shopping-bag")
+const shoppingCount = document.getElementById("shopping-count")
 const head = document.getElementById("head")
 const scrolTob = document.getElementById("scrol-tob")
 const showItems = document.createElement("div");
@@ -18,17 +20,6 @@ const regbtn = document.getElementById("regbtn");
 const phoneMessage = document.getElementById("phonemessage")
 const userMessage = document.getElementById("usermessage")
 const contents = document.querySelector(".contents")
-const toPage1 = document.getElementById("to-page-1")
-const toPage2 = document.getElementById("to-page-2")
-const toPage3 = document.getElementById("to-page-3")
-const toPage4 = document.getElementById("to-page-4")
-const toPage5 = document.getElementById("to-page-5")
-const page1 = document.getElementById("page-1")
-const page2 = document.getElementById("page-2")
-const page3 = document.getElementById("page-3")
-const page4 = document.getElementById("page-4")
-const page5 = document.getElementById("page-5")
-
 const allTabs = document.querySelector(".alltabs")
 const allBtnTab = document.querySelectorAll(".btn-tab")
 const parentOfPage = document.querySelector(".parent-of-page")
@@ -57,12 +48,6 @@ allBtnTab.forEach((item, index) => {
   })
 })
 
-// كتابة عنوان الموقع آلياً عن طريق دالة
-
-
-// allBtn.addEventListener("click", (eo) => {
-//   contents.scrollY = 100;
-// })
 
 // كتابة عنوان الموقع آلياً عن طريق دالة
 const subTitle = document.getElementById("sub-title")
@@ -79,53 +64,8 @@ const autowriting = () => {
 const stopAutoFun = setInterval(autowriting, 100)
 
 
-// التنقل بين الصفحات
-// toPage1.addEventListener("click", (eo) => {
-//   page1.style.display = "block";
-//   page1.style.opacity = 1;
-//   page1.style.scrollY = 100;
-//   backgroundColor = "var(--main-Color)"
-//   page2.style.display = "none";
-//   page3.style.display = "none";
-//   page4.style.display = "none";
-//   page5.style.display = "none";
-// })
-// toPage2.addEventListener("click", (eo) => {
-//   page1.style.display = "none";
-//   page2.style.display = "block";
-//   page2.style.opacity = 1;
-//   page3.style.display = "none";
-//   page4.style.display = "none";
-//   page5.style.display = "none";
-// })
-// toPage3.addEventListener("click", (eo) => {
-//   page1.style.display = "none";
-//   page2.style.display = "none";
-//   page3.style.display = "block";
-//   page3.style.opacity = 1;
-//   page4.style.display = "none";
-//   page5.style.display = "none";
-// })
-// toPage4.addEventListener("click", (eo) => {
-//   page1.style.display = "none";
-//   page2.style.display = "none";
-//   page3.style.display = "none";
-//   page4.style.display = "block";
-//   page4.style.opacity = 1;
-//   page5.style.display = "none";
-// })
-// toPage5.addEventListener("click", (eo) => {
-//   page1.style.display = "none";
-//   page2.style.display = "none";
-//   page3.style.display = "none";
-//   page4.style.display = "none";
-//   page5.style.display = "block";
-//   page5.style.opacity = 1;
-// })
-
-
-const updateTotalPrice = () => {
-  //تحديث السعر
+const updateTotalPrice = () => {//تحديث السعر
+  
   const allProductsInBlackScreen = document.querySelectorAll(".item-container");
   let total = 0;
   allProductsInBlackScreen.forEach((item) => {
@@ -138,11 +78,15 @@ const updateTotalPrice = () => {
   totalPrice.innerText = `${total} جنيه`;
 };
 
-allBuyBtn.forEach((item) => {
-  //الأحداث عند ضغط طلب شراء
+allBuyBtn.forEach((item) => {//الأحداث عند ضغط طلب شراء
+
   item.addEventListener("click", (eo) => {
-    {
-      //تنسيق ضغط طلب شراء
+    for (let c = 0; c < item; c++) {
+      console.log(item);
+      
+    }
+    
+    {//تنسيق ضغط طلب شراء
       item.setAttribute("disabled", "");
       item.classList.remove("btn-primary");
       item.classList.add("btn-success");
@@ -151,8 +95,7 @@ allBuyBtn.forEach((item) => {
       // item.classList.add("icon-check-circle")
     }
 
-    {
-      //إنشاء نصر مبروك وتحريكه وحذفه
+    {//إنشاء نصر مبروك وتحريكه وحذفه
       const popUp = document.createElement("div");
       body.append(popUp);
       popUp.classList.add("done-pop-up");
@@ -167,12 +110,12 @@ allBuyBtn.forEach((item) => {
       }, 1500);
     }
 
-    {
-      // إنشاء زر عرض المشتريات
-      body.append(showItems);
-      showItems.classList.add("show-items");
-      showItems.innerHTML = "عرض طلبات الشراء";
-      showItems.style.backgroundColor = "var(--main-Color)"
+    {// إنشاء زر عرض المشتريات
+      // body.append(showItems);
+      // shoppingCount.innerText = item;
+      shopping.classList.add("show-items");
+      // showItems.innerHTML = "عرض طلبات الشراء";
+      // showItems.style.backgroundColor = "var(--main-Color)"
 
     }
 
@@ -208,23 +151,22 @@ allBuyBtn.forEach((item) => {
   });
 });
 
-showItems.addEventListener("click", (eo) => {
-  // عند الضغط على عرض طلبات الشراء
+shopping.addEventListener("click", (eo) => {// عند الضغط على عرض طلبات الشراء
+  
   backScreen.style.transform = "translateX(0)";
 });
 
-close.addEventListener("click", (eo) => {
-  // عند الضغط على إغلاق شاشة منتجات
+close.addEventListener("click", (eo) => {// عند الضغط على إغلاق شاشة منتجات
+  
   backScreen.style.transform = "translateX(-110vw)";
 });
 
-backScreen.addEventListener("change", (eo) => {
-  // عند حدوث أي تغيير في شاشة طلبات الشراء
+backScreen.addEventListener("change", (eo) => {// عند حدوث أي تغيير في شاشة طلبات الشراء
+  
   updateTotalPrice();
 });
 
-backScreen.addEventListener("click", (eo) => {
-  // حذف منتج
+backScreen.addEventListener("click", (eo) => {// حذف منتج
   if (eo.target.classList.contains("btn-delete")) {
     eo.target.parentElement.remove();
     updateTotalPrice();
