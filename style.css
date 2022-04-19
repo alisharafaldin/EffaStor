@@ -163,7 +163,7 @@ body {
   /* Scroll Tob */
   .scrol-tob {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       position: fixed;
       top: 0;
       right: 0;
@@ -174,7 +174,7 @@ body {
       align-items: center;
   }
   .scrol-tob .logo {
-      margin: auto 20px;
+      margin: auto 0;
       gap: 5px;
   }
   .scrol-tob img {
@@ -275,7 +275,7 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: flex-start;
-    justify-content: center;
+    /* justify-content: center; */
     margin-bottom: 15px;
     background-color: var(--ligth-Color);
 }
@@ -301,11 +301,18 @@ body {
     color: var(--secondary-color);;
 }
 .card-body .card-title {
-
+    font-size: 15px;
+    margin: 10px 0;
+    font-weight: bold;
+    background-color: var(--main-Color);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--ligth-Color);
 }
 
 .card-text {
     color: var(--dark-Color);
+    padding: 5px;
 }
 .price_and_bay {
     width: 90%;

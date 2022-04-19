@@ -26,8 +26,8 @@ const parentOfPage = document.querySelector(".parent-of-page")
 
 // عند رفع الصفحة
 window.onscroll = function () {
-  // console.log(this.scrollY)
-  if(this.scrollY >= 100){
+  console.log(this.scrollY)
+  if(this.scrollY >= 10){
     scrolTob.classList.add("scrol-tob")
   } else {
     scrolTob.classList.remove("scrol-tob")
