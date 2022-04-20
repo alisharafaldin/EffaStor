@@ -24,6 +24,20 @@ const allTabs = document.querySelector(".alltabs")
 const allBtnTab = document.querySelectorAll(".btn-tab")
 const parentOfPage = document.querySelector(".parent-of-page")
 
+// معرفة موقع الزائر
+if (navigator.geolocation) {
+  console.log("ok");
+  navigator.geolocation.getCurrentPosition(position=>{
+
+    console.log(position(latitude.coords.longitude));
+    
+  },
+  error=>{
+    console.log(error);
+  });
+}else{
+  // console.log("no");
+}
 // عند رفع الصفحة
 window.onscroll = function () {
   console.log(this.scrollY)

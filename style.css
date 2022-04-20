@@ -249,7 +249,7 @@ body {
     color: var(--main-Color);
     font-size: 25px;
     text-align: center;
-    width: 50%;
+    width: 90%;
     margin: 10px auto;
 }
 .content-item{
@@ -365,8 +365,6 @@ body {
      z-index: 2;     
  }
 
-
-
 .item-container {
     display: flex;
     justify-content: space-around;
@@ -375,7 +373,7 @@ body {
     border-bottom: 4px solid rgb(109, 176, 221);
     background-color: #fff;
     border-radius: 10px;
-    width: 80vw;
+    width: 85vw;
     margin: 50px auto;
     color: #000;
 }
@@ -462,7 +460,7 @@ section {
 
 form {
     background-color: #fff;
-    width: 50% ;
+    width: 90% ;
     border-radius: 10px;
     margin: 100px auto; 
     transform: scale(0);
