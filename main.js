@@ -25,22 +25,50 @@ const allBtnTab = document.querySelectorAll(".btn-tab")
 const parentOfPage = document.querySelector(".parent-of-page")
 
 // معرفة موقع الزائر
-if (navigator.geolocation) {
-  console.log("ok");
-  navigator.geolocation.getCurrentPosition(position=>{
+// if (navigator.geolocation) {
+//   console.log("ok");
+//   navigator.geolocation.getCurrentPosition(position=>{
 
-    console.log(position(latitude.coords.longitude));
+//     console.log(position(latitude.coords.longitude));
     
-  },
-  error=>{
-    console.log(error);
-  });
-}else{
+//   },
+//   error=>{
+//     console.log(error);
+//   });
+// }else{
+
   // console.log("no");
-}
+// }
+
+//طريقة ثانية لمعرفة الموقع
+// let customerLocation;
+
+// const findMyState = () => {
+//   const status = document.querySelector(".status");
+//   const success = (position) => {
+//     console.log(position);
+//     const latitude = position.coords.latitude;
+//     const longitude = position.coords.longitude;
+//     console.log(" خط العرض: " + latitude + " خط الطول: " + longitude);
+//     const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+
+//     fetch(geoApiUrl)
+//     .then(res => res.json())
+//     .then(data => {
+//       customerLocation = data.countryName + " / " + data.city;
+//       console.log(customerLocation);
+//     })
+//   }
+//   const error = () => {
+//     status.textContent = "Unable to retrieve your location"
+//   }
+//   navigator.geolocation.getCurrentPosition(success, error);
+// }
+// document.querySelector(".find-state").addEventListener("click", findMyState);
+
 // عند رفع الصفحة
 window.onscroll = function () {
-  console.log(this.scrollY)
+  // console.log(this.scrollY)
   if(this.scrollY >= 10){
     scrolTob.classList.add("scrol-tob")
   } else {
@@ -110,18 +138,18 @@ allBuyBtn.forEach((item) => {//الأحداث عند ضغط طلب شراء
     }
 
     {//إنشاء نصر مبروك وتحريكه وحذفه
-      const popUp = document.createElement("div");
-      body.append(popUp);
-      popUp.classList.add("done-pop-up");
-      popUp.innerHTML = "&#128525; تم الطلب بنجاح";
+      // const popUp = document.createElement("div");
+      // body.append(popUp);
+      // popUp.classList.add("done-pop-up");
+      // popUp.innerHTML = "&#128525; تم الطلب بنجاح";
 
-      setTimeout(() => {
-        popUp.style.transform = "translateX(-50vw)";
-      }, 500);
+      // setTimeout(() => {
+      //   popUp.style.transform = "translateX(-50vw)";
+      // }, 500);
 
-      setTimeout(() => {
-        popUp.remove();
-      }, 1500);
+      // setTimeout(() => {
+      //   popUp.remove();
+      // }, 1500);
     }
 
     {// إنشاء زر عرض المشتريات
@@ -208,33 +236,25 @@ backScreen.addEventListener("click", (eo) => {// حذف منتج
 
 // createAccount تأكيد معلومات الإرسال
 function activReg() {
-
   if (phone.value != "" && username.value != '') {
-    console.log("aaaaaaa");
     regbtn.removeAttribute("disabled");
-    regbtn.style.backgroundColor = "#04aa6d";
+    regbtn.style.backgroundColor = "var(--approval-Color)";
     regbtn.style.display = "block"
-    
   } else {
     regbtn.setAttribute("disabled", "disabled");
-    regbtn.style.backgroundColor = "crimson";
-   
+    regbtn.style.backgroundColor = "var(--danger-Color)";
   }
 
   if (username.value != '') {
-    userMessage.style.color = "#fff"
-    userMessage.style.color = "#fff"
+    userMessage.style.color = "var(--ligth-Color)"
   } else {
-    userMessage.style.color = "crimson"
-    userMessage.style.color = "crimson"
+    userMessage.style.color = "var(--danger-Color)"
   }
 
   if (phone.value != "") {
-    phoneMessage.style.color = "#fff"
-    phoneMessage.style.color = "#fff"
+    phoneMessage.style.color = "var(--ligth-Color)"
   } else {
-    phoneMessage.style.color = "crimson"
-    phoneMessage.style.color = "crimson"
+    phoneMessage.style.color = "var(--danger-Color)"
   }
 }
 
@@ -269,6 +289,7 @@ SubmitPurchaseRequisition.addEventListener("click", (eo) => {
     console.log(totalPriceItemSend);
   });
 
+  
   parentForm.style.display = "block";
   setTimeout(() => {
     form.style.transform = "scale(1)";

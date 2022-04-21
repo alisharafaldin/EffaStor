@@ -27,7 +27,9 @@
     color: white;
     cursor: pointer;
 }
-
+.btn-register {
+    background-color: var(--danger-Color);
+}
 body {
     width: 100%;
     /* border: #000 1px solid; */
@@ -499,7 +501,7 @@ form {
 .papa p {
     color: red;
     font-size: 14px;
-    display: none;
+    /* display: none; */
 }
 
 .title {
